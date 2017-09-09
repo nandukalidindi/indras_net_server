@@ -1,7 +1,9 @@
 from django.http import JsonResponse
+from indra import api
 
 def index(request):
-    return JsonResponse({'foo':'bar'})
+    agent = api.get_agent(1)
+    return JsonResponse({'agent': agent})
 
 def get_agent(request):
     return JsonResponse({'agent': {}})
