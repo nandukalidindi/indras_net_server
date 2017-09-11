@@ -1,0 +1,2 @@
+Django==1.11.4
+indras-net==2.0.6
