@@ -1,0 +1,15 @@
+version: "2"
+services:
+  web_server:
+    restart: always
+    image: nginx:1.11.6-alpine
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+  application_server:
+    image: nandukalidindi/indras_net_server:0.0.0
+    expose:
+      - 8000
+    volumes:
+      - .:/app
